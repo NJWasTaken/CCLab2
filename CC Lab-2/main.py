@@ -93,8 +93,6 @@ def register_event(event_id: int, user: str):
 
     return RedirectResponse(f"/my-events?user={user}", status_code=302)
 
-
-@app.get("/my-events", response_class=HTMLResponse)
 @app.get("/my-events", response_class=HTMLResponse)
 def my_events(request: Request, user: str, page: int = 1, per_page: int = 20):
     db = get_db()
